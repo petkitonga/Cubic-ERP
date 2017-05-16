@@ -198,6 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Finance\FinanceAreaRegistration.cs" />
+    <Compile Include="Areas\Finance\Models\Account.cs" />
     <Compile Include="Areas\Finance\Models\BankAccount.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -212,6 +213,14 @@
     <Compile Include="Migrations\201705160554480_ChangeDbToPostgreSql.cs" />
     <Compile Include="Migrations\201705160554480_ChangeDbToPostgreSql.Designer.cs">
       <DependentUpon>201705160554480_ChangeDbToPostgreSql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.cs" />
+    <Compile Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.Designer.cs">
+      <DependentUpon>201705160633571_AddMoreColumnsToBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705161004018_AddingAccountsTable.cs" />
+    <Compile Include="Migrations\201705161004018_AddingAccountsTable.Designer.cs">
+      <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,6 +291,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Finance\Controllers\" />
+    <Folder Include="Areas\Finance\Dtos\" />
+    <Folder Include="Areas\Finance\ViewModels\" />
     <Folder Include="Areas\Finance\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705160554480_ChangeDbToPostgreSql.resx">
       <DependentUpon>201705160554480_ChangeDbToPostgreSql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.resx">
+      <DependentUpon>201705160633571_AddMoreColumnsToBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161004018_AddingAccountsTable.resx">
+      <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

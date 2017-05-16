@@ -22,6 +22,7 @@ namespace Cubic_ERP.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<BankAccount> BankAccounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
