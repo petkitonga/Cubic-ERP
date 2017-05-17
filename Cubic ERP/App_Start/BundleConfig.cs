@@ -9,7 +9,8 @@ namespace Cubic_ERP
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/DataTables/jquery.datatables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -22,7 +23,8 @@ namespace Cubic_ERP
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootbox.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/DataTables/datatables.bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/tableexport").Include(
                 "~/Scripts/xlsx.core.min.js",
@@ -32,7 +34,8 @@ namespace Cubic_ERP
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-united.css",
                       "~/Content/site.css",
-                      "~/Content/tableexport.css"));
+                      "~/Content/tableexport.css",
+                      "~/Content/datatables/css/datatables.bootstrap.css"));
         }
     }
 }
