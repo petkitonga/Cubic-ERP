@@ -241,6 +241,15 @@
     <Content Include="Content\bootstrap-united.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\csv.svg" />
+    <Content Include="Content\img\icsv.png" />
+    <Content Include="Content\img\itxt.png" />
+    <Content Include="Content\img\ixls.png" />
+    <Content Include="Content\img\ixlsx.png" />
+    <Content Include="Content\img\txt.svg" />
+    <Content Include="Content\img\xls.svg" />
+    <Content Include="Content\img\xlsx.svg" />
+    <Content Include="Content\tableexport.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

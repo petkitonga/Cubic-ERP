@@ -323,7 +323,7 @@
              */
             xlsx: {
                 defaultClass: "xlsx",
-                buttonContent: "Export to xlsx",
+                buttonContent: "Export Excel(xlsx)",
                 mimeType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 fileExtension: ".xlsx"
             },
@@ -333,7 +333,7 @@
              */
             xls: {
                 defaultClass: "xls",
-                buttonContent: "Export to xls",
+                buttonContent: "Export Excel(xls)",
                 separator: "\t",
                 mimeType: "application/vnd.ms-excel",
                 fileExtension: ".xls"
@@ -344,7 +344,7 @@
              */
             csv: {
                 defaultClass: "csv",
-                buttonContent: "Export to csv",
+                buttonContent: "Export CSV",
                 separator: ",",
                 mimeType: "text/csv",
                 fileExtension: ".csv"
@@ -355,7 +355,7 @@
              */
             txt: {
                 defaultClass: "txt",
-                buttonContent: "Export to txt",
+                buttonContent: "Export TXT",
                 separator: "  ",
                 mimeType: "text/plain",
                 fileExtension: ".txt"

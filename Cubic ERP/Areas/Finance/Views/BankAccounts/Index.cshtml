@@ -57,7 +57,11 @@
                     }
                 );
 
-                $("#table-crud").tableExport();
+                $("#table-crud").tableExport({
+                        formats: ["xlsx","xls", "csv", "txt"],
+                        fileName:"Bank Accounts"
+                });
+
             }
         );
     </script>

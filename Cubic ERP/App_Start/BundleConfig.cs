@@ -31,7 +31,8 @@ namespace Cubic_ERP
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-united.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/tableexport.css"));
         }
     }
 }
