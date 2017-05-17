@@ -1,0 +1,63 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.BankAccountFormViewModel
+@{
+    ViewBag.Title = "BankAccountForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bank Accounts</h2>
+
+@if (Model.ActionIndicator==1)
+{
+    <h4>Create New</h4>
+}
+else
+{
+  <h4>Edit</h4>
+}
+
+@using (Html.BeginForm("Save","BankAccounts")) 
+{
+   
+    <div class="form-group">
+        @Html.LabelFor(m=>m.BankAccountDto.BankName)
+        @Html.TextBoxFor(m=>m.BankAccountDto.BankName, new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.BankAccountDto.BankName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m=>m.BankAccountDto.BankBranch)
+        @Html.TextBoxFor(m=>m.BankAccountDto.BankBranch, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BankAccountDto.BankBranch)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankAccountDto.OfficeId)
+        @Html.TextBoxFor(m => m.BankAccountDto.OfficeId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BankAccountDto.OfficeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankAccountDto.Name)
+        @Html.TextBoxFor(m => m.BankAccountDto.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BankAccountDto.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankAccountDto.AccountId)
+        @Html.DropDownListFor(m => m.BankAccountDto.AccountId, new SelectList(Model.AccountDtos, "Id", "AccountName"), "Select Account", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BankAccountDto.AccountId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankAccountDto.BankAccountNumber)
+        @Html.TextBoxFor(m => m.BankAccountDto.BankAccountNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BankAccountDto.BankAccountNumber)
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m=>m.BankAccountDto.IsMerchantAccount) Is Merchant Account?
+        </label>
+    </div>
+    @Html.HiddenFor(m=>m.BankAccountDto.Id)
+    <button class="btn btn-primary" type="submit">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
