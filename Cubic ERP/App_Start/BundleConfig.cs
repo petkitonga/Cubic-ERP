@@ -24,6 +24,11 @@ namespace Cubic_ERP
                       "~/Scripts/bootbox.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/tableexport").Include(
+                "~/Scripts/xlsx.core.min.js",
+                "~/Scripts/FileSaver.js",
+                "~/Scripts/tableexport.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-united.css",
                       "~/Content/site.css"));
