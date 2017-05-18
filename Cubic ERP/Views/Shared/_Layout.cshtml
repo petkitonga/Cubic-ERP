@@ -31,12 +31,31 @@
     </div>
 <div class="container-fluid body-content">
     <div class="row">
-        <div class="col-md-2" style="border-right: 1px solid gray; height: auto;">
+        <div class="col-md-2" style="border-right: 1px solid #cce2ff; height: auto;">
+            <br/>
+            <div class="inner-addon right-addon">
+                <i class="glyphicon glyphicon-search"></i>
+                <input id="search-input" class="form-control input-sm active" autofocus="autofocus"></input>
+            </div>
+            <br/>
             <div id="js-tree">
+
                 <ul>
-                    <li>Link One</li>
-                    <li>Link Two</li>
-                    <li>Link Three</li>
+                    <li>Finance
+                        <ul>
+                            <li>Tasks</li>
+                            <li>Setups
+                                <ul>
+                                    <li data-jstree='{"type":"demo"}'>Bank Accounts</li>
+                                </ul>
+                            </li>
+                            <li>Reports</li>
+                        </ul>
+
+                    </li>
+                    <li>Inventory</li>
+                    <li>Purchases</li>
+                    <li>Sales</li>
                 </ul>
             </div>
         </div>
