@@ -29,5 +29,21 @@ namespace Cubic_ERP.Areas.Finance.Controllers.API
 
             return Ok(_context.BankAccounts.ToList());
         }
+
+        //Delete bank accoount with this id
+        [HttpDelete]
+        [Route("finance/api/bankaccounts/{id}")]
+        public IHttpActionResult DeleteBankAccount(int id)
+        {
+            var bankAccount = _context.BankAccounts.Find(id);
+            if (bankAccount==null)
+            {
+                return NotFound();
+            }
+
+            _context.BankAccounts.Remove(bankAccount);
+            _context.SaveChanges();
+            return Ok();
+        }
     }
 }
