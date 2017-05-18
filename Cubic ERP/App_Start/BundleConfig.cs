@@ -15,6 +15,10 @@ namespace Cubic_ERP
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jstree").Include(
+                "~/Scripts/jsTree3/jstree.js",
+                "~/Scripts/jsTree3/jst-site.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -35,7 +39,8 @@ namespace Cubic_ERP
                       "~/Content/bootstrap-united.css",
                       "~/Content/site.css",
                       "~/Content/tableexport.css",
-                      "~/Content/datatables/css/datatables.bootstrap.css"));
+                      "~/Content/datatables/css/datatables.bootstrap.css",
+                      "~/Content/jsTree/themes/default/style.css"));
         }
     }
 }

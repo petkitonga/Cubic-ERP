@@ -32,6 +32,13 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div id="js-tree">
+            <ul>
+                <li>Link One</li>
+                <li>Link Two</li>
+                <li>Link Three</li>
+            </ul>
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
@@ -39,6 +46,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jstree")
     @RenderSection("scripts", required: false)
 </body>
 </html>
