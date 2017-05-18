@@ -29,20 +29,28 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <div id="js-tree">
-            <ul>
-                <li>Link One</li>
-                <li>Link Two</li>
-                <li>Link Three</li>
-            </ul>
+<div class="container-fluid body-content">
+    <div class="row">
+        <div class="col-md-2" style="border-right: 1px solid gray; height: auto;">
+            <div id="js-tree">
+                <ul>
+                    <li>Link One</li>
+                    <li>Link Two</li>
+                    <li>Link Three</li>
+                </ul>
+            </div>
         </div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <div class="col-md-10">
+            @RenderBody()
+        </div>
     </div>
+    
+    <hr/>
+    
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

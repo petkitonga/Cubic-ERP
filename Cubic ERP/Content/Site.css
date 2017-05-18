@@ -30,3 +30,14 @@ textarea {
 .input-validation-error {
     border: 2px solid red;
 }
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
