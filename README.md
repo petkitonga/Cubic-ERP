@@ -1,6 +1,6 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is Cubic ERP. Developed by Cubic Data.
 
 ### What is this repository for? ###
 
