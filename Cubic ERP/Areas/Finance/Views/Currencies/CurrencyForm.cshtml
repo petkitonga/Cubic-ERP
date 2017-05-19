@@ -1,0 +1,83 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.CurrencyFormViewModel
+@{
+    ViewBag.Title = "Currencies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3 class="pull-left">Currencies</h3>
+    <a id="form-navigator" href="@Url.Action("Index", "Currencies")" class="btn btn-success btn-sm pull-right"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <hr id="hr-separator" />
+</div>
+
+<div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Save", "Currencies", FormMethod.Post,new{@id="form-submit"}))
+        {
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CurrenciesDto.CurrencyCode)
+                    @Html.TextBoxFor(m => m.CurrenciesDto.CurrencyCode, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CurrenciesDto.CurrencyCode)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CurrenciesDto.CurrencySymbol)
+                    @Html.TextBoxFor(m => m.CurrenciesDto.CurrencySymbol, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CurrenciesDto.CurrencySymbol)
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CurrenciesDto.CurrencyName)
+                    @Html.TextBoxFor(m => m.CurrenciesDto.CurrencyName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CurrenciesDto.CurrencyName)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CurrenciesDto.HundredthName)
+                    @Html.TextBoxFor(m => m.CurrenciesDto.HundredthName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CurrenciesDto.HundredthName)
+                </div>
+            </div>
+            
+            @Html.HiddenFor(m => m.CurrenciesDto.Id)
+
+            if(Model.ActionIndicator == 1)
+            {
+                <button class="btn btn-primary" type="submit">Save</button>
+            }
+            else
+            {
+                <a href="#" class="btn btn-primary" id="js-edit">Save</a>
+            }
+            <a href="@Url.Action("Index","Currencies")" class="btn btn-default">Cancel</a>
+        }
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#js-edit").on('click',
+                    function () {
+
+                        bootbox.confirm("Are you sure you want to Edit this item?",
+                            function(result) {
+                                if (result) {
+                                    $("#form-submit").submit();
+                                }
+                            }
+                        );
+                    }
+                );
+                
+            }
+        );
+
+    </script>
+}

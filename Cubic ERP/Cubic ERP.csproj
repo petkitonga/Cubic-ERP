@@ -213,12 +213,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Finance\Controllers\API\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\BankAccountsController.cs" />
+    <Compile Include="Areas\Finance\Controllers\Setups\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Dtos\AccountDto.cs" />
     <Compile Include="Areas\Finance\Dtos\BankAccountDto.cs" />
+    <Compile Include="Areas\Finance\Dtos\CurrenciesDto.cs" />
     <Compile Include="Areas\Finance\FinanceAreaRegistration.cs" />
     <Compile Include="Areas\Finance\Models\Account.cs" />
     <Compile Include="Areas\Finance\Models\BankAccount.cs" />
+    <Compile Include="Areas\Finance\Models\Currencies.cs" />
     <Compile Include="Areas\Finance\ViewModels\BankAccountFormViewModel.cs" />
+    <Compile Include="Areas\Finance\ViewModels\CurrencyFormViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jsTree3Controller.cs" />
@@ -241,6 +245,10 @@
     <Compile Include="Migrations\201705161004018_AddingAccountsTable.cs" />
     <Compile Include="Migrations\201705161004018_AddingAccountsTable.Designer.cs">
       <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191339413_AddCurrenciesTable.cs" />
+    <Compile Include="Migrations\201705191339413_AddCurrenciesTable.Designer.cs">
+      <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -397,6 +405,8 @@
     <Content Include="Areas\Finance\Views\BankAccounts\BankAccountForm.cshtml" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Areas\Finance\Views\Currencies\Index.cshtml" />
+    <Content Include="Areas\Finance\Views\Currencies\CurrencyForm.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -547,6 +557,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705161004018_AddingAccountsTable.resx">
       <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191339413_AddCurrenciesTable.resx">
+      <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
