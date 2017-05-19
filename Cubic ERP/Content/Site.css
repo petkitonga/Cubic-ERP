@@ -66,3 +66,21 @@ textarea {
     border-color: #5c2040;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px #5c2040;
 }
+
+#first-form-input {
+    max-width: 500px;
+}
+
+#hr-separator {
+    border: 0;
+    clear: both;
+    display: block;
+    width: auto;
+    background-color: #cce2ff;
+    height: 1px;
+}
+
+#form-navigator {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
