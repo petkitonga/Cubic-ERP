@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Finance\Controllers\API\BankAccountsController.cs" />
+    <Compile Include="Areas\Finance\Controllers\API\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Dtos\AccountDto.cs" />
