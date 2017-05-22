@@ -1,0 +1,84 @@
+﻿@model List<Cubic_ERP.Areas.Finance.Models.CashFlowHeading>
+@{
+    ViewBag.Title = "Cash Flow Headings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div>
+    <a class="btn btn-default" href="@Url.Action("New","CashFlowHeadings")">Add New</a>
+</div>
+
+<br/>
+<table id="table-crud" class="table table-responsive table-striped">
+    <thead>
+    <tr>
+        <th>Actions</th>
+        <th>#</th>
+        <th>Cash Flow Heading Code</th>
+        <th>Cash Flow Heading Name</th>
+        <th>Cash Flow Heading Type</th>
+        <th>Is Debit</th>
+        <th>Is Sales</th>
+        <th>Is Purchase</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var cfheader in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Edit","CashFlowHeadings", new {id=cfheader.Id})"><span class="glyphicon glyphicon-edit"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-remove js-delete" data-cfheader-id="@cfheader.Id"></span></a>
+            </td>
+            <td>@cfheader.Id</td>
+            <td>@cfheader.CashFlowHeadingCode</td>
+            <td>@cfheader.CashFlowHeadingName</td>
+            <td>@cfheader.CashFlowHeadingType</td>
+            <td>@(cfheader.IsDebit ? "Yes" : "No")</td>
+            <td>@(cfheader.IsSales?"Yes":"No")</td>
+            <td>@(cfheader.IsPurchase? "Yes":"No")</td>
+        </tr>  
+    }
+    
+    </tbody>
+</table>
+@section scripts
+{
+    @Scripts.Render("~/bundles/tableexport")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#table-crud").on("click", ".js-delete",
+                    function () {
+                        var deleteLink = $(this);
+                        bootbox.confirm("Are you sure you want to delete this item?",
+                            function(result) {
+                                if (result) {
+                                    $.ajax({
+                                        url: "/finance/api/cashflowheadings/" + deleteLink.attr("data-cfheader-id"),
+                                        method: "DELETE",
+                                        success: function() {
+                                            console.log("Successfully deleted Cash Flow Heading: " + deleteLink.attr("data-cfheader-id"));
+                                            deleteLink.parents("tr").remove();
+                                        }
+                                    });
+                                }
+                            }
+                        );
+                    }
+                );
+
+                $("#table-crud").tableExport({
+                    formats: ["xlsx","xls", "csv", "txt"],
+                    fileName: "Cash Flow Headings",
+                    position: "bottom"
+                });
+
+                $("#table-crud").dataTable();
+            }
+        );
+    </script>
+}

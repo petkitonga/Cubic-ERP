@@ -212,17 +212,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Finance\Controllers\API\BankAccountsController.cs" />
+    <Compile Include="Areas\Finance\Controllers\API\CashFlowHeadingsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\CurrenciesController.cs" />
+    <Compile Include="Areas\Finance\Controllers\Setups\CashFlowHeadingsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Dtos\AccountDto.cs" />
     <Compile Include="Areas\Finance\Dtos\BankAccountDto.cs" />
+    <Compile Include="Areas\Finance\Dtos\CashFlowHeadingDto.cs" />
     <Compile Include="Areas\Finance\Dtos\CurrenciesDto.cs" />
     <Compile Include="Areas\Finance\FinanceAreaRegistration.cs" />
     <Compile Include="Areas\Finance\Models\Account.cs" />
     <Compile Include="Areas\Finance\Models\BankAccount.cs" />
+    <Compile Include="Areas\Finance\Models\CashFlowHeading.cs" />
     <Compile Include="Areas\Finance\Models\Currencies.cs" />
     <Compile Include="Areas\Finance\ViewModels\BankAccountFormViewModel.cs" />
+    <Compile Include="Areas\Finance\ViewModels\CashFlowHeadingFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\CurrencyFormViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -250,6 +255,14 @@
     <Compile Include="Migrations\201705191339413_AddCurrenciesTable.cs" />
     <Compile Include="Migrations\201705191339413_AddCurrenciesTable.Designer.cs">
       <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705201725165_AddCashFlowHeadingsTable.cs" />
+    <Compile Include="Migrations\201705201725165_AddCashFlowHeadingsTable.Designer.cs">
+      <DependentUpon>201705201725165_AddCashFlowHeadingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.cs" />
+    <Compile Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.Designer.cs">
+      <DependentUpon>201705201734279_AddCashFlowHeadingTypeColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -408,6 +421,8 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Areas\Finance\Views\Currencies\Index.cshtml" />
     <Content Include="Areas\Finance\Views\Currencies\CurrencyForm.cshtml" />
+    <Content Include="Areas\Finance\Views\CashFlowHeadings\Index.cshtml" />
+    <Content Include="Areas\Finance\Views\CashFlowHeadings\CashFlowHeadingForm.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -561,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705191339413_AddCurrenciesTable.resx">
       <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201725165_AddCashFlowHeadingsTable.resx">
+      <DependentUpon>201705201725165_AddCashFlowHeadingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.resx">
+      <DependentUpon>201705201734279_AddCashFlowHeadingTypeColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

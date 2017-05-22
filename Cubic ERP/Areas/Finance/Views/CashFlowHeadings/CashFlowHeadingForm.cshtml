@@ -1,0 +1,101 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.CashFlowHeadingFormViewModel
+@{
+    ViewBag.Title = "Cash Flow Headings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3 class="pull-left">@ViewBag.Title</h3>
+    <a id="form-navigator" href="@Url.Action("Index", "CashFlowHeadings")" class="btn btn-success btn-sm pull-right"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <hr id="hr-separator" />
+</div>
+
+<div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Save", "CashFlowHeadings", FormMethod.Post,new{@id="form-submit"}))
+        {
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CashFlowHeadingDto.CashFlowHeadingName)
+                @Html.TextBoxFor(m => m.CashFlowHeadingDto.CashFlowHeadingName, new { @class = "form-control", @id="first-form-input" })
+                @Html.ValidationMessageFor(m => m.CashFlowHeadingDto.CashFlowHeadingName)
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CashFlowHeadingDto.CashFlowHeadingCode)
+                    @Html.TextBoxFor(m => m.CashFlowHeadingDto.CashFlowHeadingCode, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CashFlowHeadingDto.CashFlowHeadingCode)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CashFlowHeadingDto.CashFlowHeadingType)
+                    @Html.TextBoxFor(m => m.CashFlowHeadingDto.CashFlowHeadingType, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CashFlowHeadingDto.CashFlowHeadingType)
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.CashFlowHeadingDto.IsDebit) Is Debit?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.CashFlowHeadingDto.IsSales) Is Sales?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.CashFlowHeadingDto.IsPurchase) Is Purchase?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            @Html.HiddenFor(m => m.CashFlowHeadingDto.Id)
+
+            if(Model.ActionIndicator == 1)
+            {
+                <button class="btn btn-primary" type="submit">Save</button>
+            }
+            else
+            {
+                <a href="#" class="btn btn-primary" id="js-edit">Save</a>
+            }
+            <a href="@Url.Action("Index","CashFlowHeadings")" class="btn btn-default">Cancel</a>
+        }
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#js-edit").on('click',
+                    function () {
+
+                        bootbox.confirm("Are you sure you want to Edit this item?",
+                            function(result) {
+                                if (result) {
+                                    $("#form-submit").submit();
+                                }
+                            }
+                        );
+                    }
+                );
+                
+            }
+        );
+
+    </script>
+}

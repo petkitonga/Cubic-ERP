@@ -24,6 +24,7 @@ namespace Cubic_ERP.Models
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Currencies> DbCurrencies { get; set; }
+        public DbSet<CashFlowHeading> CashFlowHeadings { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
