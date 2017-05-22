@@ -20,6 +20,9 @@ namespace Cubic_ERP.App_Start
             Mapper.CreateMap<CurrenciesDto, Currencies>().ForMember(m=>m.Id, opt=>opt.Ignore());
             Mapper.CreateMap<CashFlowHeadingDto, CashFlowHeading>().ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<CashFlowHeading, CashFlowHeadingDto>();
+
+            Mapper.CreateMap<AccountMasterDto, AccountMaster>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<AccountMaster, AccountMasterDto>();
         }
     }
 }

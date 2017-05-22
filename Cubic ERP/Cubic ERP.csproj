@@ -211,24 +211,30 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Finance\Controllers\API\AccountMastersController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\AgeingSlabsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\CashFlowHeadingsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\CurrenciesController.cs" />
+    <Compile Include="Areas\Finance\Controllers\Setups\AccountMastersController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\AgeingSlabsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CashFlowHeadingsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Dtos\AccountDto.cs" />
+    <Compile Include="Areas\Finance\Dtos\AccountMasterDto.cs" />
     <Compile Include="Areas\Finance\Dtos\BankAccountDto.cs" />
     <Compile Include="Areas\Finance\Dtos\CashFlowHeadingDto.cs" />
     <Compile Include="Areas\Finance\Dtos\CurrenciesDto.cs" />
     <Compile Include="Areas\Finance\FinanceAreaRegistration.cs" />
     <Compile Include="Areas\Finance\Models\Account.cs" />
+    <Compile Include="Areas\Finance\Models\AccountMaster.cs" />
     <Compile Include="Areas\Finance\Models\AgeingSlab.cs" />
     <Compile Include="Areas\Finance\Models\BankAccount.cs" />
     <Compile Include="Areas\Finance\Models\CashFlowHeading.cs" />
+    <Compile Include="Areas\Finance\Models\CashFlowSetup.cs" />
     <Compile Include="Areas\Finance\Models\Currencies.cs" />
+    <Compile Include="Areas\Finance\ViewModels\AccountMasterFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\AgeingSlabFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\BankAccountFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\CashFlowHeadingFormViewModel.cs" />
@@ -271,6 +277,10 @@
     <Compile Include="Migrations\201705220426456_AddAgeingSlabsTable.cs" />
     <Compile Include="Migrations\201705220426456_AddAgeingSlabsTable.Designer.cs">
       <DependentUpon>201705220426456_AddAgeingSlabsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705220706302_AddAccountMastersTable.cs" />
+    <Compile Include="Migrations\201705220706302_AddAccountMastersTable.Designer.cs">
+      <DependentUpon>201705220706302_AddAccountMastersTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -433,6 +443,8 @@
     <Content Include="Areas\Finance\Views\CashFlowHeadings\CashFlowHeadingForm.cshtml" />
     <Content Include="Areas\Finance\Views\AgeingSlabs\Index.cshtml" />
     <Content Include="Areas\Finance\Views\AgeingSlabs\AgeingSlabForm.cshtml" />
+    <Content Include="Areas\Finance\Views\AccountMasters\Index.cshtml" />
+    <Content Include="Areas\Finance\Views\AccountMasters\AccountMasterForm.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -595,6 +607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705220426456_AddAgeingSlabsTable.resx">
       <DependentUpon>201705220426456_AddAgeingSlabsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705220706302_AddAccountMastersTable.resx">
+      <DependentUpon>201705220706302_AddAccountMastersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
