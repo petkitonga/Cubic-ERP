@@ -1,0 +1,76 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.AgeingSlabFormViewModel
+@{
+    ViewBag.Title = "Ageing Slabs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3 class="pull-left">@ViewBag.Title</h3>
+    <a id="form-navigator" href="@Url.Action("Index", "AgeingSlabs")" class="btn btn-success btn-sm pull-right"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <hr id="hr-separator" />
+</div>
+
+<div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Save", "AgeingSlabs", FormMethod.Post,new{@id="form-submit"}))
+        {
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.AgeingSlab.Name)
+                @Html.TextBoxFor(m => m.AgeingSlab.Name, new { @class = "form-control", @id="first-form-input" })
+                @Html.ValidationMessageFor(m => m.AgeingSlab.Name)
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.AgeingSlab.FromDays)
+                    @Html.TextBoxFor(m => m.AgeingSlab.FromDays, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.AgeingSlab.FromDays)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.AgeingSlab.ToDays)
+                    @Html.TextBoxFor(m => m.AgeingSlab.ToDays, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.AgeingSlab.ToDays)
+                </div>
+            </div>
+            
+            @Html.HiddenFor(m => m.AgeingSlab.Id)
+
+            if(Model.ActionIndicator == 1)
+            {
+                <button class="btn btn-primary" type="submit">Save</button>
+            }
+            else
+            {
+                <a href="#" class="btn btn-primary" id="js-edit">Save</a>
+            }
+            <a href="@Url.Action("Index","AgeingSlabs")" class="btn btn-default">Cancel</a>
+        }
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#js-edit").on('click',
+                    function () {
+
+                        bootbox.confirm("Are you sure you want to Edit this item?",
+                            function(result) {
+                                if (result) {
+                                    $("#form-submit").submit();
+                                }
+                            }
+                        );
+                    }
+                );
+                
+            }
+        );
+
+    </script>
+}
