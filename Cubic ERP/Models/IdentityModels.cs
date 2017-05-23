@@ -27,6 +27,7 @@ namespace Cubic_ERP.Models
         public DbSet<CashFlowHeading> CashFlowHeadings { get; set; }
         public DbSet<AgeingSlab> AgeingSlabs { get; set; }
         public DbSet<AccountMaster> AccountMasters { get; set; }
+        public DbSet<CashFlowSetup> CashFlowSetups { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
