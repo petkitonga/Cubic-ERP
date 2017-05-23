@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Cubic_ERP.Areas.Finance.Models.Account>
+@{
+    ViewBag.Title = "Chart of Accounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div>
+    <a class="btn btn-default" href="@Url.Action("New","Accounts")">Add New</a>
+</div>
+
+<br/>
+<table id="table-crud" class="table table-responsive table-striped">
+    <thead>
+    <tr>
+        <th>Actions</th>
+        <th>#</th>
+        <th>Account Master</th>
+        <th>Account Number</th>
+        <th>External Code</th>
+        <th>Currency</th>
+        <th>Account Name</th>
+        <th>Description</th>
+        <th>Confidential</th>
+        <th>Is Transaction Node?</th>
+        <th>Sys Type</th>
+        <th>Account Master Id</th>
+        <th>Parent</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var account in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Edit","Accounts", new {id=account.Id})"><span class="glyphicon glyphicon-edit"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-remove js-delete" data-account-id="@account.Id"></span></a>
+            </td>
+            <td>@account.Id</td>
+            <td>@account.AccountMaster.Name</td>
+            <td>@account.AccountNumber</td>
+            <td>@account.ExternalCode</td>
+            <td>@account.CurrencyCode</td>
+            <td>@account.AccountName</td>
+            <td>@account.Description</td>
+            <td>@(account.Confidential?"Yes":"No")</td>
+            <td>@(account.IsTransactionNode?"Yes":"No")</td>
+            <td>@(account.SysType?"Yes":"No")</td>
+            <td>@account.AccountMasterId</td>
+            <td>@(account.ParentAccountId==null?"":
+                Model.SingleOrDefault(p=>p.Id==account.ParentAccountId).AccountNumber
+                +"("+
+                Model.SingleOrDefault(p=>p.Id==account.ParentAccountId).AccountName
+                +")")</td>
+        </tr>  
+    }
+    
+    </tbody>
+</table>
+@section scripts
+{
+    @Scripts.Render("~/bundles/tableexport")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#table-crud").on("click", ".js-delete",
+                    function () {
+                        var deleteLink = $(this);
+                        bootbox.confirm("Are you sure you want to delete this item?",
+                            function(result) {
+                                if (result) {
+                                    $.ajax({
+                                        url: "/finance/api/accounts/" + deleteLink.attr("data-account-id"),
+                                        method: "DELETE",
+                                        success: function() {
+                                            console.log("Successfully deleted Account: " + deleteLink.attr("data-account-id"));
+                                            deleteLink.parents("tr").remove();
+                                        }
+                                    });
+                                }
+                            }
+                        );
+                    }
+                );
+
+                $("#table-crud").tableExport({
+                    formats: ["xlsx","xls", "csv", "txt"],
+                    fileName: "Chart of Accounts",
+                    position: "bottom"
+                });
+
+                $("#table-crud").dataTable();
+            }
+        );
+    </script>
+}

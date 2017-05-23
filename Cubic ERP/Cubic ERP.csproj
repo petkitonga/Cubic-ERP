@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Finance\Controllers\API\AccountMastersController.cs" />
+    <Compile Include="Areas\Finance\Controllers\API\AccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\AgeingSlabsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\BankAccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\CardTypesController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Areas\Finance\Controllers\API\CurrenciesController.cs" />
     <Compile Include="Areas\Finance\Controllers\API\PaymentCardsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\AccountMastersController.cs" />
+    <Compile Include="Areas\Finance\Controllers\Setups\AccountsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\AgeingSlabsController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CardTypesController.cs" />
     <Compile Include="Areas\Finance\Controllers\Setups\CashFlowHeadingsController.cs" />
@@ -245,6 +247,7 @@
     <Compile Include="Areas\Finance\Models\CostCenter.cs" />
     <Compile Include="Areas\Finance\Models\Currencies.cs" />
     <Compile Include="Areas\Finance\Models\PaymentCard.cs" />
+    <Compile Include="Areas\Finance\ViewModels\AccountFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\AccountMasterFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\AgeingSlabFormViewModel.cs" />
     <Compile Include="Areas\Finance\ViewModels\BankAccountFormViewModel.cs" />
@@ -264,6 +267,14 @@
     <Compile Include="Migrations\201705231250271_ResetToBeInitialMigration.cs" />
     <Compile Include="Migrations\201705231250271_ResetToBeInitialMigration.Designer.cs">
       <DependentUpon>201705231250271_ResetToBeInitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231521480_AddAccountMasterToAccountRelationship.cs" />
+    <Compile Include="Migrations\201705231521480_AddAccountMasterToAccountRelationship.Designer.cs">
+      <DependentUpon>201705231521480_AddAccountMasterToAccountRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231615429_UpdateAccountNameColumnInAccounts.cs" />
+    <Compile Include="Migrations\201705231615429_UpdateAccountNameColumnInAccounts.Designer.cs">
+      <DependentUpon>201705231615429_UpdateAccountNameColumnInAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -436,6 +447,8 @@
     <Content Include="Areas\Finance\Views\CardTypes\CardTypeForm.cshtml" />
     <Content Include="Areas\Finance\Views\PaymentCards\Index.cshtml" />
     <Content Include="Areas\Finance\Views\PaymentCards\PaymentCardForm.cshtml" />
+    <Content Include="Areas\Finance\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Finance\Views\Accounts\AccountForm.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -577,6 +590,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705231250271_ResetToBeInitialMigration.resx">
       <DependentUpon>201705231250271_ResetToBeInitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231521480_AddAccountMasterToAccountRelationship.resx">
+      <DependentUpon>201705231521480_AddAccountMasterToAccountRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231615429_UpdateAccountNameColumnInAccounts.resx">
+      <DependentUpon>201705231615429_UpdateAccountNameColumnInAccounts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

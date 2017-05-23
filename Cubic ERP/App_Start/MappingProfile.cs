@@ -23,6 +23,7 @@ namespace Cubic_ERP.App_Start
 
             Mapper.CreateMap<AccountMasterDto, AccountMaster>().ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<AccountMaster, AccountMasterDto>();
+
         }
     }
 }

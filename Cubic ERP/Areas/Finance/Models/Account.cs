@@ -11,6 +11,7 @@ namespace Cubic_ERP.Areas.Finance.Models
         public int Id { get; set; }
 
         public int AccountMasterId { get; set; }
+        public AccountMaster AccountMaster { get; set; }
 
         [StringLength(50)]
         [Required]
@@ -23,6 +24,7 @@ namespace Cubic_ERP.Areas.Finance.Models
         [StringLength(50)]
         public string CurrencyCode { get; set; }
 
+        [Required]
         [StringLength(255)]
         public string AccountName { get; set; }
 
