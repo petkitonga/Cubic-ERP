@@ -1,0 +1,72 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.CardTypeFormViewModel
+@{
+    ViewBag.Title = "Card Types";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3 class="pull-left">@ViewBag.Title</h3>
+    <a id="form-navigator" href="@Url.Action("Index", "CardTypes")" class="btn btn-success btn-sm pull-right"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <hr id="hr-separator" />
+</div>
+
+<div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Save", "CardTypes", FormMethod.Post, new { @id = "form-submit" }))
+        {
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CardType.Code)
+                    @Html.TextBoxFor(m => m.CardType.Code, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CardType.Code)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.CardType.Name)
+                    @Html.TextBoxFor(m => m.CardType.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CardType.Name)
+                </div>
+            </div>
+
+
+            @Html.HiddenFor(m => m.CardType.Id)
+
+            if (Model.ActionIndicator == 1)
+            {
+                <button class="btn btn-primary" type="submit">Save</button>
+            }
+            else
+            {
+                <a href="#" class="btn btn-primary" id="js-edit">Save</a>
+            }
+            <a href="@Url.Action("Index","CardTypes")" class="btn btn-default">Cancel</a>
+        }
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#js-edit").on('click',
+                    function () {
+
+                        bootbox.confirm("Are you sure you want to Edit this item?",
+                            function(result) {
+                                if (result) {
+                                    $("#form-submit").submit();
+                                }
+                            }
+                        );
+                    }
+                );
+
+            }
+        );
+
+    </script>
+}

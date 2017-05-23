@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Cubic_ERP.Areas.Finance.Models.CardType>
+@{
+    ViewBag.Title = "Card Types";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div>
+    <a class="btn btn-default" href="@Url.Action("New","CardTypes")">Add New</a>
+</div>
+
+<br />
+<table id="table-crud" class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>Actions</th>
+            <th>#</th>
+            <th>Card Type Code</th>
+            <th>Card Type Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cardType in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Edit","CardTypes", new {id=cardType.Id})"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-remove js-delete" data-cardtype-id="@cardType.Id"></span></a>
+                </td>
+                <td>@cardType.Id</td>
+                <td>@cardType.Code</td>
+                <td>@cardType.Name</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+@section scripts
+{
+    @Scripts.Render("~/bundles/tableexport")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#table-crud").on("click", ".js-delete",
+                    function () {
+                        var deleteLink = $(this);
+                        bootbox.confirm("Are you sure you want to delete this item?",
+                            function(result) {
+                                if (result) {
+                                    $.ajax({
+                                        url: "/finance/api/cardtypes/" + deleteLink.attr("data-cardtype-id"),
+                                        method: "DELETE",
+                                        success: function() {
+                                            console.log("Successfully deleted Card Type: " + deleteLink.attr("data-cardtype-id"));
+                                            deleteLink.parents("tr").remove();
+                                        }
+                                    });
+                                }
+                            }
+                        );
+                    }
+                );
+
+                $("#table-crud").tableExport({
+                    formats: ["xlsx","xls", "csv", "txt"],
+                    fileName: "Card Types",
+                    position: "bottom"
+                });
+
+                $("#table-crud").dataTable();
+            }
+        );
+    </script>
+}
