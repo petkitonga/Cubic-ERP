@@ -13,7 +13,7 @@
                 "default": {
                     "icon": "glyphicon glyphicon-folder-open"
                 },
-                "demo": {
+                "leaf": {
                     "icon": "glyphicon glyphicon-file"
                 }
             },
@@ -38,5 +38,12 @@
                 $('#js-tree').jstree('search', v);
             }, 250);
         });
+
+        $('#js-tree').on("click",
+            ".jstree-anchor",
+            function() {
+                document.location = $(this).attr("href");
+            }
+        );
     }
 );

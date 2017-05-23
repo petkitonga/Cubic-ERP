@@ -31,9 +31,9 @@
     </div>
 <div class="container-fluid body-content">
     <div class="row">
-        <div class="col-md-2" style="border-right: 1px solid #cce2ff; height: auto;">
+        <div class="col-md-2" id="menu-holder">
             <br/>
-            <div class="inner-addon right-addon">
+            <div class="inner-addon right-addon" id="search-box">
                 <i class="glyphicon glyphicon-search"></i>
                 <input id="search-input" class="form-control input-sm active" autofocus="autofocus"></input>
             </div>
@@ -46,16 +46,16 @@
                             <li>Tasks</li>
                             <li>Setup & Maintenance
                                 <ul>
-                                    <li data-jstree='{"type":"demo"}'>Bank Accounts</li>
-                                    <li data-jstree='{"type":"demo"}'>Currency Management</li>
-                                    <li data-jstree='{"type":"demo"}'>Cash Flow Headings</li>
-                                    <li data-jstree='{"type":"demo"}'>Ageing Slabs</li>
-                                    <li data-jstree='{"type":"demo"}'>Account Masters</li>
-                                    <li data-jstree='{"type":"demo"}'>Cash Flow Setups</li>
-                                    <li data-jstree='{"type":"demo"}'>Cost Centers</li>
-                                    <li data-jstree='{"type":"demo"}'>Card Types</li>
-                                    <li data-jstree='{"type":"demo"}'>Payment Cards</li>
-                                    <li data-jstree='{"type":"demo"}'>Chart of Accounts</li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","AccountMasters")">Account Masters</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","Accounts")">Chart of Accounts</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","Currencies")">Currency Management</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","BankAccounts")">Bank Accounts</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","AgeingSlabs")">Ageing Slabs</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","CashFlowHeadings")">Cash Flow Headings</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","CashFlowSetup")">Cash Flow Setups</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","CostCenters")">Cost Centers</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","CardTypes")">Card Types</a></li>
+                                    <li data-jstree='{"type":"leaf"}'><a href="@Url.Action("Index","PaymentCards")">Payment Cards</a></li>
                                 </ul>
                             </li>
                             <li>Reports</li>

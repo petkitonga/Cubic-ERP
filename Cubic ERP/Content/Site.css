@@ -84,3 +84,19 @@ textarea {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+#menu-holder {
+    border-right: 1px solid #cce2ff;
+    height: auto;
+    padding-left: 0px;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+#search-box {
+    padding-left: 10px;
+}
+
+#table-crud {
+    font-size: 13px;
+}
