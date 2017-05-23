@@ -30,6 +30,7 @@ namespace Cubic_ERP.Models
         public DbSet<CashFlowSetup> CashFlowSetups { get; set; }
         public DbSet<CostCenter> CostCenters { get; set; }
         public DbSet<CardType> CardTypes { get; set; }
+        public DbSet<PaymentCard> PaymentCards { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

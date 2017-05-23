@@ -1,0 +1,77 @@
+﻿@model Cubic_ERP.Areas.Finance.ViewModels.PaymentCardFormViewModel
+@{
+    ViewBag.Title = "Payment Cards";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3 class="pull-left">@ViewBag.Title</h3>
+    <a id="form-navigator" href="@Url.Action("Index", "PaymentCards")" class="btn btn-success btn-sm pull-right"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <hr id="hr-separator" />
+</div>
+
+<div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Save", "PaymentCards", FormMethod.Post,new{@id="form-submit"}))
+        {
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.PaymentCard.Name)
+                @Html.TextBoxFor(m => m.PaymentCard.Name, new { @class = "form-control", @id="first-form-input" })
+                @Html.ValidationMessageFor(m => m.PaymentCard.Name)
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.PaymentCard.Code)
+                    @Html.TextBoxFor(m => m.PaymentCard.Code, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.PaymentCard.Code)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(m => m.PaymentCard.CardTypeId)
+                    @Html.DropDownListFor(m => m.PaymentCard.CardTypeId, new SelectList(Model.CardTypes, "Id", "Name"), "Select Card Type", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.PaymentCard.CardTypeId)
+                </div>
+            </div>
+            
+            
+            @Html.HiddenFor(m => m.PaymentCard.Id)
+
+            if(Model.ActionIndicator == 1)
+            {
+                <button class="btn btn-primary" type="submit">Save</button>
+            }
+            else
+            {
+                <a href="#" class="btn btn-primary" id="js-edit">Save</a>
+            }
+            <a href="@Url.Action("Index","PaymentCards")" class="btn btn-default">Cancel</a>
+        }
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $("#js-edit").on('click',
+                    function () {
+
+                        bootbox.confirm("Are you sure you want to Edit this item?",
+                            function(result) {
+                                if (result) {
+                                    $("#form-submit").submit();
+                                }
+                            }
+                        );
+                    }
+                );
+                
+            }
+        );
+
+    </script>
+}
