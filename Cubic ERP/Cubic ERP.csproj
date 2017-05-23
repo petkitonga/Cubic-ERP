@@ -261,57 +261,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705121111179_InitialDatabase.cs" />
-    <Compile Include="Migrations\201705121111179_InitialDatabase.Designer.cs">
-      <DependentUpon>201705121111179_InitialDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705160554480_ChangeDbToPostgreSql.cs" />
-    <Compile Include="Migrations\201705160554480_ChangeDbToPostgreSql.Designer.cs">
-      <DependentUpon>201705160554480_ChangeDbToPostgreSql.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.cs" />
-    <Compile Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.Designer.cs">
-      <DependentUpon>201705160633571_AddMoreColumnsToBankAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705161004018_AddingAccountsTable.cs" />
-    <Compile Include="Migrations\201705161004018_AddingAccountsTable.Designer.cs">
-      <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705191339413_AddCurrenciesTable.cs" />
-    <Compile Include="Migrations\201705191339413_AddCurrenciesTable.Designer.cs">
-      <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705201725165_AddCashFlowHeadingsTable.cs" />
-    <Compile Include="Migrations\201705201725165_AddCashFlowHeadingsTable.Designer.cs">
-      <DependentUpon>201705201725165_AddCashFlowHeadingsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.cs" />
-    <Compile Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.Designer.cs">
-      <DependentUpon>201705201734279_AddCashFlowHeadingTypeColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705220426456_AddAgeingSlabsTable.cs" />
-    <Compile Include="Migrations\201705220426456_AddAgeingSlabsTable.Designer.cs">
-      <DependentUpon>201705220426456_AddAgeingSlabsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705220706302_AddAccountMastersTable.cs" />
-    <Compile Include="Migrations\201705220706302_AddAccountMastersTable.Designer.cs">
-      <DependentUpon>201705220706302_AddAccountMastersTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705230310550_AddTableCashFlowSetups.cs" />
-    <Compile Include="Migrations\201705230310550_AddTableCashFlowSetups.Designer.cs">
-      <DependentUpon>201705230310550_AddTableCashFlowSetups.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705230618570_AddCostCentersTable.cs" />
-    <Compile Include="Migrations\201705230618570_AddCostCentersTable.Designer.cs">
-      <DependentUpon>201705230618570_AddCostCentersTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705230805029_AddCardTypesTable.cs" />
-    <Compile Include="Migrations\201705230805029_AddCardTypesTable.Designer.cs">
-      <DependentUpon>201705230805029_AddCardTypesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705230853147_AddPaymentCardsTable.cs" />
-    <Compile Include="Migrations\201705230853147_AddPaymentCardsTable.Designer.cs">
-      <DependentUpon>201705230853147_AddPaymentCardsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201705231250271_ResetToBeInitialMigration.cs" />
+    <Compile Include="Migrations\201705231250271_ResetToBeInitialMigration.Designer.cs">
+      <DependentUpon>201705231250271_ResetToBeInitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -623,44 +575,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705121111179_InitialDatabase.resx">
-      <DependentUpon>201705121111179_InitialDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705160554480_ChangeDbToPostgreSql.resx">
-      <DependentUpon>201705160554480_ChangeDbToPostgreSql.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705160633571_AddMoreColumnsToBankAccount.resx">
-      <DependentUpon>201705160633571_AddMoreColumnsToBankAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705161004018_AddingAccountsTable.resx">
-      <DependentUpon>201705161004018_AddingAccountsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705191339413_AddCurrenciesTable.resx">
-      <DependentUpon>201705191339413_AddCurrenciesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705201725165_AddCashFlowHeadingsTable.resx">
-      <DependentUpon>201705201725165_AddCashFlowHeadingsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705201734279_AddCashFlowHeadingTypeColumn.resx">
-      <DependentUpon>201705201734279_AddCashFlowHeadingTypeColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705220426456_AddAgeingSlabsTable.resx">
-      <DependentUpon>201705220426456_AddAgeingSlabsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705220706302_AddAccountMastersTable.resx">
-      <DependentUpon>201705220706302_AddAccountMastersTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705230310550_AddTableCashFlowSetups.resx">
-      <DependentUpon>201705230310550_AddTableCashFlowSetups.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705230618570_AddCostCentersTable.resx">
-      <DependentUpon>201705230618570_AddCostCentersTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705230805029_AddCardTypesTable.resx">
-      <DependentUpon>201705230805029_AddCardTypesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705230853147_AddPaymentCardsTable.resx">
-      <DependentUpon>201705230853147_AddPaymentCardsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705231250271_ResetToBeInitialMigration.resx">
+      <DependentUpon>201705231250271_ResetToBeInitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

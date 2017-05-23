@@ -10,12 +10,16 @@ namespace Cubic_ERP.Areas.Finance.Models
     {
         public int Id { get; set; }
 
-        public int? AccountMasterId { get; set; }
+        public int AccountMasterId { get; set; }
 
         [StringLength(50)]
+        [Required]
         public string AccountNumber { get; set; }
+
         [StringLength(50)]
         public string ExternalCode { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string CurrencyCode { get; set; }
 
@@ -26,11 +30,11 @@ namespace Cubic_ERP.Areas.Finance.Models
         public string Description { get; set; }
 
 
-        public bool? Confidential { get; set; }
-        public bool? IsTransactionNode { get; set; }
-        public bool? SysType { get; set; }
+        public bool Confidential { get; set; }
+        public bool IsTransactionNode { get; set; }
+        public bool SysType { get; set; }
 
-        public int ParentAccountId { get; set; }
+        public int? ParentAccountId { get; set; }
 
 
         public int? AuditUserId { get; set; }

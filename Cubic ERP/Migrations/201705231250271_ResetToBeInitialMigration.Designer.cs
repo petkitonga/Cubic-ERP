@@ -7,13 +7,13 @@ namespace Cubic_ERP.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddCostCentersTable : IMigrationMetadata
+    public sealed partial class ResetToBeInitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCostCentersTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ResetToBeInitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705230618570_AddCostCentersTable"; }
+            get { return "201705231250271_ResetToBeInitialMigration"; }
         }
         
         string IMigrationMetadata.Source
