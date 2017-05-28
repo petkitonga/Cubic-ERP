@@ -48,7 +48,9 @@
 
     <script type="text/javascript">
         $(document).ready(
-            function() {
+            function () {
+                var table = $("#table-crud").DataTable();
+
                 $("#table-crud").on("click", ".js-delete",
                     function () {
                         var deleteLink = $(this);
@@ -60,7 +62,7 @@
                                         method: "DELETE",
                                         success: function() {
                                             console.log("Successfully deleted Account Master: " + deleteLink.attr("data-accountmaster-id"));
-                                            deleteLink.parents("tr").remove();
+                                            table.row(deleteLink.parents("tr")).remove().draw();
                                         }
                                     });
                                 }
@@ -74,8 +76,7 @@
                     fileName: "Account Masters",
                     position: "bottom"
                 });
-
-                $("#table-crud").dataTable();
+                
             }
         );
     </script>

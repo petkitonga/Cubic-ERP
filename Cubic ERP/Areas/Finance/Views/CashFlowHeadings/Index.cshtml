@@ -50,7 +50,9 @@
 
     <script type="text/javascript">
         $(document).ready(
-            function() {
+            function () {
+                var table = $("#table-crud").DataTable();
+
                 $("#table-crud").on("click", ".js-delete",
                     function () {
                         var deleteLink = $(this);
@@ -62,7 +64,7 @@
                                         method: "DELETE",
                                         success: function() {
                                             console.log("Successfully deleted Cash Flow Heading: " + deleteLink.attr("data-cfheader-id"));
-                                            deleteLink.parents("tr").remove();
+                                            table.row(deleteLink.parents("tr")).remove().draw();
                                         }
                                     });
                                 }
@@ -77,7 +79,7 @@
                     position: "bottom"
                 });
 
-                $("#table-crud").dataTable();
+                
             }
         );
     </script>
